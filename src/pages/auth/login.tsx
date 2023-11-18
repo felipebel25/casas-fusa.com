@@ -116,36 +116,7 @@ const LoginPage = () => {
                         </Grid>
                         <Grid item xs={12} display={'flex'} flexDirection={'column'} justifyContent={'flex-end'}>
                             <Divider sx={{ width: "100%", mb: 2 }} />
-                            {Object.values(providers).map((provider: any) => {
-                                if (provider.id === 'credentials') return (<div key={provider.id} ></div>)
-                                if (provider.id === 'github') return (
-                                    <Button
-
-                                        key={provider.id}
-                                        variant="outlined"
-                                        fullWidth
-                                        color="primary"
-                                        sx={{ mb: 1, cursor: "pointer" }}
-                                        onClick={() => signIn(provider.id)}
-                                        startIcon={<GitHub />}
-
-                                    >
-                                        Login with {provider.name}
-                                    </Button>
-                                )
-                                return (
-                                    <Button
-                                        key={provider.id}
-                                        variant="outlined"
-                                        fullWidth
-                                        color="primary"
-                                        sx={{ mb: 1 }}
-                                        onClick={() => signIn(provider.id)}
-                                    >
-                                        {provider.name}
-                                    </Button>
-                                )
-                            })}
+            
                         </Grid>
                     </Grid>
                 </Box>

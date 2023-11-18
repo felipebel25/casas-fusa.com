@@ -1,18 +1,21 @@
 export interface IProduct {
     _id: string;
+    title: string;
     description: string;
     images: string[];
-    inStock: number;
     price: number;
-    sizes: ISize[];
+    rooms: number;
+    bathrooms: number;
+    ubication: string;
+
     slug: string;
     tags: string[];
-    title: string;
     type: IType;
-    gender: 'men' | 'women' | 'kid' | 'unisex',
+
+    highlight: boolean;
+
     createdAt: string;
     updatedAt: string;
 
 }
-export type ISize = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL';
-export type IType = 'shirts' | 'pants' | 'hoodies' | 'hats';
+export type IType = 'casa' | 'apartamento' | 'lote' | 'finca' | 'aparta-estudio';

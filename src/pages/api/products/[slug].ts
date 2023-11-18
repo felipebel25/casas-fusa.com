@@ -23,7 +23,7 @@ const getProduct = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     const { slug } = req.query;
     await db.connect();
 
-    const product = await Product.findOne({ slug }).lean()
+    const product = await Product.findOne({ slug })
 
     if (!product) {
         await db.disconnect();
@@ -33,7 +33,4 @@ const getProduct = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     product.images = product.images.map((image) => image.includes('http') ? image : `${process.env.HOST_NAME}products/${image}`)
 
     return res.status(200).json(product)
-
-
-
 }

@@ -20,6 +20,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
             return updateProducts(req, res)
         case 'POST':
             return createProduct(req, res)
+        case 'DELETE':
+            return removeProduct(req, res)
 
         default:
             res.status(400).json({ message: 'Bad Request' })
@@ -72,7 +74,7 @@ const updateProducts = async (req: NextApiRequest, res: NextApiResponse) => {
         product.images.forEach(async (image) => {
             // borrar de cloudinary
             if (!images.includes(image)) {
-                const [ fileId, extension ] = image.substring(image.lastIndexOf('/') + 1).split('.')
+                const [fileId, extension] = image.substring(image.lastIndexOf('/') + 1).split('.')
                 await cloudinary.uploader.destroy(fileId)
 
             }
@@ -117,4 +119,21 @@ const createProduct = async (req: NextApiRequest, res: NextApiResponse) => {
 
     //TODO: posiblemente tendremos un localhost:3000/products/asdasd.jpg
 
+}
+
+export const removeProduct = async (req: NextApiRequest, res: NextApiResponse<{ message: string }>) => {
+    const { slug } = req.body;
+
+    await db.connect();
+
+    const product = await Product.findOne({ slug: slug })
+
+    if (!product) {
+        await db.disconnect();
+        return res.status(400).json({ message: "No existe este product " })
+    }
+    product.deleteOne();
+    await db.disconnect();
+
+    return res.status(200).json({ message: "Casa eliminada " })
 }
