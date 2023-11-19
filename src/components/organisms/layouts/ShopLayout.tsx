@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/atoms/Navbar";
+import { Navbar } from "@/components/atoms/navBar/Navbar";
 import { SideMenu } from "@/components/molecules/SideMenu";
 import { Box } from "@mui/material";
 import Head from "next/head"
@@ -27,9 +27,12 @@ export const ShopLayout = ({ children, title, pageDescription, imageFullUrl }: P
             <Box
                 component={'main'}
                 sx={{
-                    margin: "80px auto",
-                    width:"100% !important",
-                    maxWidth: "1440px",
+                    marginTop: "4.5rem",
+                    width: "100%",
+                    height: "calc(100% - 4.5rem)",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column"
                 }}
             >
                 {children}

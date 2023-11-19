@@ -2,9 +2,10 @@ import { useContext, useState } from "react"
 import { useRouter } from "next/router"
 import NextLink from "next/link"
 
-import { ClearOutlined, SearchOutlined, ShoppingCart } from "@mui/icons-material"
-import { AppBar, Badge, Box, Button, IconButton, Input, InputAdornment, Link, Toolbar, Typography } from "@mui/material"
+import { ClearOutlined, SearchOutlined } from "@mui/icons-material"
+import { AppBar, Box, Button, IconButton, Input, InputAdornment, Link, Toolbar, Typography } from "@mui/material"
 import { UiContext } from "@/context"
+import { styles } from "./stylesNavbar"
 
 export const Navbar = () => {
 
@@ -19,12 +20,12 @@ export const Navbar = () => {
         push(`/search/${searchTerm}`)
     }
     return (
-        <AppBar>
-            <Toolbar>
+        <AppBar sx={styles.main}>
+            <Toolbar sx={styles.container}>
                 <NextLink href='/' passHref legacyBehavior>
                     <Link display='flex' alignItems='center'>
-                        <Typography variant="h6">Teslita |  </Typography>
-                        <Typography sx={{ ml: 0.5 }} >Shop</Typography>
+                        <Typography variant="h5">Casas |  </Typography>
+                        <Typography sx={{ ml: 0.5 }} >Fusagasuga</Typography>
                     </Link>
                 </NextLink>
                 <Box flex={1} />
@@ -32,22 +33,21 @@ export const Navbar = () => {
                     <NextLink href='/category/men' passHref legacyBehavior>
                         <Link>
                             <Button sx={{ m: "0.5rem" }} color={`${asPath.includes('/men') ? 'primary' : "info"}`} >
-                                Hombres
+                                Casas
                             </Button>
                         </Link>
                     </NextLink>
                     <NextLink href='/category/women' passHref legacyBehavior>
                         <Link>
                             <Button sx={{ m: "0.5rem" }} color={`${asPath.includes('/women') ? 'primary' : "info"}`} >
-
-                                Mujeres
+                                Apartamentos
                             </Button>
                         </Link>
                     </NextLink>
                     <NextLink href='/category/kid' passHref legacyBehavior>
                         <Link>
                             <Button sx={{ m: "0.5rem" }} color={`${asPath.includes('/kid') ? 'primary' : "info"}`} >
-                                Kids
+                                Fincas
                             </Button>
                         </Link>
                     </NextLink>
@@ -91,7 +91,7 @@ export const Navbar = () => {
                 >
                     <SearchOutlined />
                 </IconButton>
-           
+
                 <Button onClick={toggleSideMenu}  >
                     Menu
                 </Button>

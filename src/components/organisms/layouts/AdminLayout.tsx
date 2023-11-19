@@ -1,9 +1,9 @@
 import { PropsWithChildren } from "react";
 import Head from "next/head"
 
-import { AdminNavbar } from "../../molecules/admin";
-import { SideMenu } from "@/components/ui";
 import { Box, Typography } from "@mui/material";
+import { AdminNavbar } from "@/components/molecules/admin/AdminNavbar";
+import { SideMenu } from "@/components/molecules/SideMenu";
 
 interface Props extends PropsWithChildren {
     title: string;

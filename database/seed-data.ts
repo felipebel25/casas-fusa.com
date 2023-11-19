@@ -39,7 +39,7 @@ export const initialData: SeedData = {
         {
             title: "Hermosa Casa",
             description: "Hermosa hermosa hermosa casa",
-            images: ['', ''],
+            images: ['https://res.cloudinary.com/dmftfxau8/image/upload/v1700371611/g1gsrytkb2nbbzvalvqs.jpg', 'https://res.cloudinary.com/dmftfxau8/image/upload/v1700371605/rbgbm92udrchxykbudcd.jpg'],
             price: 250000000,
             rooms: 5,
             bathrooms: 2,
@@ -52,7 +52,7 @@ export const initialData: SeedData = {
         {
             title: "Hermosa Casa Balmoral",
             description: "Hermosa hermosa hermosa casa",
-            images: ['', ''],
+            images: ['https://res.cloudinary.com/dmftfxau8/image/upload/v1700371611/g1gsrytkb2nbbzvalvqs.jpg', 'https://res.cloudinary.com/dmftfxau8/image/upload/v1700371605/rbgbm92udrchxykbudcd.jpg'],
             price: 350000000,
             rooms: 3,
             bathrooms: 2,
@@ -62,7 +62,19 @@ export const initialData: SeedData = {
             type: "casa",
             highlight: true
         },
-
+        {
+            title: "Hermosa Casa Balmoral",
+            description: "Hermosa hermosa hermosa casa",
+            images: ['https://res.cloudinary.com/dmftfxau8/image/upload/v1700371605/rbgbm92udrchxykbudcd.jpg', 'https://res.cloudinary.com/dmftfxau8/image/upload/v1700371605/rbgbm92udrchxykbudcd.jpg'],
+            price: 350000000,
+            rooms: 3,
+            bathrooms: 2,
+            ubication: 'Fusagasuga',
+            slug: "hermosa_casa_santanita",
+            tags: ['casa', 'barata'],
+            type: "casa",
+            highlight: true
+        },
     ],
     users: [
         {

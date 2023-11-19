@@ -1,13 +1,13 @@
 import useSWR from 'swr'
 import { Box, Button, CardMedia, Grid } from "@mui/material"
 import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid"
-import { AdminLayout } from "@/components/organisms/layouts"
 
 import { IProduct } from "@/interfaces"
 import { AddOutlined, CategoryOutlined, DeleteOutline } from "@mui/icons-material"
 import Link from 'next/link'
 import { removeHouse } from '@/services/products'
 import { useRouter } from 'next/router'
+import { AdminLayout } from '@/components/organisms/layouts/AdminLayout'
 
 
 const ProductsPage = () => {

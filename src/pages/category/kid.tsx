@@ -1,5 +1,5 @@
 import { ShopLayout } from "@/components/organisms/layouts";
-import { ProductList } from "@/components/molecules/products/ProductList";
+import { ProductList } from "@/components/molecules/products/ProductList/ProductList";
 import { FullScreenLoading } from "@/components/ui";
 import { useProducts } from "@/hooks/useProducts";
 import { Grid, Typography } from "@mui/material";

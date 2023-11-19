@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { red,  } from '@mui/material/colors';
+import { red, } from '@mui/material/colors';
 
 
 export const lightTheme = createTheme({
@@ -9,7 +9,7 @@ export const lightTheme = createTheme({
       main: '#1E1E1E'
     },
     secondary: {
-      main: '#3A64D8'
+      main: '#46C2CB'
     },
     info: {
       main: '#fff'
@@ -33,22 +33,29 @@ export const lightTheme = createTheme({
         },
       }
     },
-
     MuiTypography: {
       styleOverrides: {
         h1: {
           fontSize: 30,
-          fontWeight: 600
+          fontWeight: 700,
+          fontFamily: "Raleway",
         },
         h2: {
           fontSize: 20,
-          fontWeight: 400
+          fontWeight: 400,
+          fontFamily: 'Poppins'
         },
         subtitle1: {
           fontSize: 18,
-          fontWeight: 600
+          fontWeight: 600,
+          fontFamily: 'Poppins'
+        },
+        root: {
+          fontFamily: 'Poppins',
+          marginBottom: "0 !important"
         }
-      }
+      },
+
     },
 
 
@@ -57,13 +64,14 @@ export const lightTheme = createTheme({
         variant: 'contained',
         size: 'small',
         disableElevation: true,
-        color: 'info'
+        color: 'info',
       },
       styleOverrides: {
         root: {
           textTransform: 'none',
           boxShadow: 'none',
           borderRadius: 10,
+          fontFamily: "Poppins",
           ":hover": {
             backgroundColor: 'rgba(0,0,0,0.05)',
             transition: 'all 0.3s ease-in-out'
@@ -71,8 +79,6 @@ export const lightTheme = createTheme({
         }
       }
     },
-
-
     MuiCard: {
       defaultProps: {
         elevation: 0
@@ -84,6 +90,6 @@ export const lightTheme = createTheme({
         }
       }
     }
-    
+
   }
 });

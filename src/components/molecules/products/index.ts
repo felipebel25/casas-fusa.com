@@ -1,3 +1,3 @@
-export { ProductCard } from "./ProductCard";
-export { ProductList } from "./ProductList";
+export { ProductCard } from "./productCard/ProductCard";
+export { ProductList } from "./productList/ProductList";
 export { ProductSlideShow } from "./productSlideShow/ProductSlideShow";

@@ -5,13 +5,13 @@ import { useForm } from 'react-hook-form';
 import { Box, Button, capitalize, Card, CardActions, CardMedia, Checkbox, Chip, Divider, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, ListItem, Paper, Radio, RadioGroup, TextField } from '@mui/material';
 import { getProductBySlug } from 'database';
 
-import { AdminLayout } from '../../../components/organisms/layouts'
 import { IProduct, ISize, IType } from '../../../interfaces';
 
 import { DriveFileRenameOutline, SaveOutlined, UploadOutlined } from '@mui/icons-material';
 import { tesloApi } from 'axiosApi';
 import { Product } from 'models';
 import { useRouter } from 'next/router';
+import { AdminLayout } from '@/components/organisms/layouts/AdminLayout';
 
 
 const validTypes = ['shirts', 'pants', 'hoodies', 'hats']
@@ -98,14 +98,7 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
 
         }
     }
-    const onChangeSize = (size: string) => {
-        const currentSizes = getValues('sizes')
-        if (currentSizes.includes(size)) {
-            setValue('sizes', currentSizes.filter(size => size !== size), { shouldValidate: true })
-            return;
-        }
-        setValue('sizes', [...currentSizes, size], { shouldValidate: true })
-    }
+
 
     const onNewTag = () => {
         const newTag = newTagValue.trim().toLowerCase()
@@ -172,20 +165,7 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
                             helperText={errors.description?.message}
                         />
 
-                        <TextField
-                            label="Inventario"
-                            type='number'
-                            variant="filled"
-                            fullWidth
-                            sx={{ mb: 1 }}
-                            {...register('inStock', {
-                                required: 'Este campo es requerido',
-                                minLength: { value: 0, message: 'Mínimo de valor cero' }
-
-                            })}
-                            error={!!errors.inStock}
-                            helperText={errors.inStock?.message}
-                        />
+                    
 
                         <TextField
                             label="Precio"
@@ -244,17 +224,7 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
                                 }
                             </RadioGroup>
                         </FormControl>
-                        <FormGroup>
-                            <FormLabel>Tallas</FormLabel>
-                            {validSizes.map(size => (
-                                <FormControlLabel
-                                    key={size}
-                                    control={<Checkbox checked={getValues('sizes').includes(size)} />}
-                                    onChange={() => onChangeSize(size)}
-                                    label={size}
-                                />
-                            ))}
-                        </FormGroup>
+                    
                     </Grid>
                     {/* Tags e imagenes */}
                     <Grid item xs={12} sm={6}>

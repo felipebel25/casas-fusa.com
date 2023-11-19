@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Box, Card, CardActionArea, CardMedia, Grid, Link, Typography } from "@mui/material"
 import { IProduct } from "@/interfaces"
 import NextLink from "next/link";
+import { styles } from "./stylesProductCard";
 
 interface Props {
     product: IProduct;
@@ -21,10 +22,9 @@ export const ProductCard = ({ product }: Props) => {
     return (
         <Grid
             item
-            xs={5}
-            sm={4}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            sx={styles.main}
 
         >
             <NextLink href={`/product/${product.slug}`} passHref prefetch={false}>
@@ -43,8 +43,9 @@ export const ProductCard = ({ product }: Props) => {
                 </Link>
             </NextLink>
             <Box sx={{ mt: 1, display: isImageLoaded ? 'block' : 'none' }} className='fadeIn'>
-                <Typography fontWeight={700}>{product.title}</Typography>
-                <Typography fontWeight={500}>{`$${product.price}`}</Typography>
+                <Typography component="h6" variant="h6" >{product.title}</Typography>
+                <Typography  >{product.description}</Typography>
+                <Typography fontWeight={500}>{`${product.price.toLocaleString("es-CO", { style: "currency", currency: "COP" })}`}</Typography>
             </Box>
         </Grid>
     )

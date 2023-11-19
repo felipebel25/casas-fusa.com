@@ -17,6 +17,11 @@
     opacity: 1;
   }
 }
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 .fadeIn {
   -webkit-animation-duration: 0.5s;
@@ -27,8 +32,19 @@
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
+html,
+body {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
 
-
+}
+body{
+  font-family: 'Poppins';
+}
+*{
+  padding:0;
+}
 .circular-btn {
   border-radius: 30px;
 }
