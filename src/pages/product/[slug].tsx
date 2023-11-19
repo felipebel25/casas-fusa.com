@@ -1,11 +1,11 @@
 import { GetStaticProps, GetStaticPropsContext } from "next"
 import { useRouter } from "next/router"
 
-import { ShopLayout } from "@/components/layouts"
-import { ProductSlideShow } from "@/components/products"
+import { ProductSlideShow } from "@/components/molecules/products"
 import { IProduct } from "@/interfaces"
 import { Box, Grid, Typography } from "@mui/material"
 import { getAllProductSlugs, getProductBySlug } from "database/dbProducts"
+import { ShopLayout } from "@/components/organisms/layouts/ShopLayout"
 
 
 interface Props {
@@ -16,8 +16,6 @@ interface Props {
 const ProductPage = ({ product }: Props) => {
 
   const { push } = useRouter()
-
-
 
   return (
     <ShopLayout

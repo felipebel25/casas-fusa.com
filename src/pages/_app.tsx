@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 import { SWRConfig } from 'swr'
 import { lightTheme } from 'themes'
-import { AuthProvider, UiProvider } from 'context'
+import { AuthProvider, UiProvider } from '@/context'
 import { SessionProvider } from "next-auth/react"
 
 export default function App({ Component, pageProps }: AppProps) {

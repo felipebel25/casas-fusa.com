@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Box, Button, capitalize, Card, CardActions, CardMedia, Checkbox, Chip, Divider, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, ListItem, Paper, Radio, RadioGroup, TextField } from '@mui/material';
 import { getProductBySlug } from 'database';
 
-import { AdminLayout } from '../../../components/layouts'
+import { AdminLayout } from '../../../components/organisms/layouts'
 import { IProduct, ISize, IType } from '../../../interfaces';
 
 import { DriveFileRenameOutline, SaveOutlined, UploadOutlined } from '@mui/icons-material';

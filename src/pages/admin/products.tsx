@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import { Box, Button, CardMedia, Grid } from "@mui/material"
 import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid"
-import { AdminLayout } from "@/components/layouts"
+import { AdminLayout } from "@/components/organisms/layouts"
 
 import { IProduct } from "@/interfaces"
 import { AddOutlined, CategoryOutlined, DeleteOutline } from "@mui/icons-material"

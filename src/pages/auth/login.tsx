@@ -9,7 +9,7 @@ import { Box, Button, Chip, Divider, Grid, TextField, Typography } from "@mui/ma
 import { ErrorOutline, GitHub } from "@mui/icons-material";
 import { isEmail } from "utils";
 
-import { AuthLayout } from "@/components/layouts"
+import { AuthLayout } from "@/components/organisms/layouts"
 
 type FormData = {
     email: string;

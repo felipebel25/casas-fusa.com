@@ -1,6 +1,6 @@
 import { AccessTimeOutlined, AttachMoneyOutlined, CategoryOutlined, CreditCardOffOutlined, CreditCardOutlined, DashboardOutlined, GroupOutlined, ProductionQuantityLimitsOutlined } from "@mui/icons-material"
-import { SummaryTile } from "@/components/admin"
-import { AdminLayout } from "@/components/layouts"
+import { SummaryTile } from "@/components/molecules/admin"
+import { AdminLayout } from "@/components/organisms/layouts"
 import { Grid, Typography } from "@mui/material"
 import useSWR from 'swr'
 import { IDashboard } from "@/interfaces";

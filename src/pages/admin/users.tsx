@@ -1,4 +1,4 @@
-import { AdminLayout } from "@/components/layouts"
+import { AdminLayout } from "@/components/organisms/layouts"
 import { IUser } from "@/interfaces/users"
 import { PeopleOutline } from "@mui/icons-material"
 

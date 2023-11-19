@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import Head from "next/head"
 
-import { AdminNavbar } from "../admin";
+import { AdminNavbar } from "../../molecules/admin";
 import { SideMenu } from "@/components/ui";
 import { Box, Typography } from "@mui/material";
 

@@ -4,10 +4,10 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { isEmail } from "utils";
 
-import { AuthLayout } from "@/components/layouts"
+import { AuthLayout } from "@/components/organisms/layouts"
 import { ErrorOutline } from "@mui/icons-material";
 import { Box, Button, Chip, Grid, TextField, Typography } from "@mui/material"
-import { AuthContext } from "context";
+import { AuthContext } from "@/context";
 import { getSession, signIn } from "next-auth/react";
 import { GetServerSideProps } from "next";
 

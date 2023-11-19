@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 
 import { useRouter } from "next/router"
 import { Box, Divider, Drawer, IconButton, Input, InputAdornment, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
-import { AuthContext, UiContext } from "context"
+import { AuthContext, UiContext } from "@/context"
 
 import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, CodeOutlined, ConfirmationNumberOutlined, DashboardOutlined, EscalatorWarningOutlined, FemaleOutlined, LoginOutlined, MaleOutlined, SearchOutlined, VpnKeyOutlined } from "@mui/icons-material"
 import { navigateToPublicUrl } from "utils/globalFunctions"

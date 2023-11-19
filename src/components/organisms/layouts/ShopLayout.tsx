@@ -1,4 +1,5 @@
-import { Navbar, SideMenu } from "@/components/ui";
+import { Navbar } from "@/components/atoms/Navbar";
+import { SideMenu } from "@/components/molecules/SideMenu";
 import { Box } from "@mui/material";
 import Head from "next/head"
 import { PropsWithChildren } from "react";

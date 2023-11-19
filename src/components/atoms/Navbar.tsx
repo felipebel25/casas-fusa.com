@@ -4,7 +4,7 @@ import NextLink from "next/link"
 
 import { ClearOutlined, SearchOutlined, ShoppingCart } from "@mui/icons-material"
 import { AppBar, Badge, Box, Button, IconButton, Input, InputAdornment, Link, Toolbar, Typography } from "@mui/material"
-import { UiContext } from "context"
+import { UiContext } from "@/context"
 
 export const Navbar = () => {
 
