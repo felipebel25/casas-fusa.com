@@ -14,8 +14,8 @@ export const AdminNavbar = () => {
             <Toolbar>
                 <NextLink href='/' passHref legacyBehavior>
                     <Link display='flex' alignItems='center'>
-                        <Typography variant="h6">Teslita |  </Typography>
-                        <Typography sx={{ ml: 0.5 }} >Shop</Typography>
+                    <Typography variant="h5">Casas |  </Typography>
+                        <Typography sx={{ ml: 0.5 }} >Fusagasuga</Typography>
                     </Link>
                 </NextLink>
                 <Box flex={1} />

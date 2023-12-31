@@ -1,8 +1,10 @@
 import { useMemo, useState } from "react";
-import { Box, Card, CardActionArea, CardMedia, Grid, Link, Typography } from "@mui/material"
+import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Link, Typography } from "@mui/material"
 import { IProduct } from "@/interfaces"
 import NextLink from "next/link";
 import { styles } from "./stylesProductCard";
+import { priceToCop } from "utils/globalFunctions";
+import { Bathtub, Bed } from "@mui/icons-material";
 
 interface Props {
     product: IProduct;
@@ -25,28 +27,37 @@ export const ProductCard = ({ product }: Props) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             sx={styles.main}
-
         >
-            <NextLink href={`/product/${product.slug}`} passHref prefetch={false}>
-                <Link>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia
-                                component={'img'}
-                                className='fadeIn'
-                                image={productImage}
-                                alt={product.title}
-                                onLoad={() => setisImageLoaded(true)}
-                            />
-                        </CardActionArea>
-                    </Card>
-                </Link>
+            <NextLink href={`/product/${product.slug}`} >
+                <Card>
+                    <CardActionArea>
+                        <CardMedia
+                            component={'img'}
+                            className='fadeIn'
+                            image={productImage}
+                            alt={product.title}
+                            sx={styles.imageHouse}
+                            onLoad={() => setisImageLoaded(true)}
+                        />
+                        <CardContent>
+                            <Box sx={{ display: isImageLoaded ? 'block' : 'none' }} className='fadeIn'>
+                                <Typography component="h6" variant="h6" fontWeight={600} >{product.title}</Typography>
+                                <Typography fontWeight={600}>{`${priceToCop(product.price)}`}</Typography>
+                                <Typography  sx={styles.description} >{product.description}</Typography>
+                                <Box sx={styles.textIcon}>
+                                    <Bed sx={styles.icon} />
+                                    <Typography paragraph>{product.rooms} Habitaciones</Typography>
+                                </Box>
+                                <Box sx={styles.textIcon}>
+                                    <Bathtub sx={styles.icon} />
+                                    <Typography paragraph>{product.rooms} Baños</Typography>
+                                </Box>
+                            </Box>
+                        </CardContent>
+                    </CardActionArea>
+
+                </Card>
             </NextLink>
-            <Box sx={{ mt: 1, display: isImageLoaded ? 'block' : 'none' }} className='fadeIn'>
-                <Typography component="h6" variant="h6" >{product.title}</Typography>
-                <Typography  >{product.description}</Typography>
-                <Typography fontWeight={500}>{`${product.price.toLocaleString("es-CO", { style: "currency", currency: "COP" })}`}</Typography>
-            </Box>
         </Grid>
     )
 

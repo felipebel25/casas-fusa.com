@@ -8,8 +8,8 @@ import { useForm } from "react-hook-form";
 import { Box, Button, Chip, Divider, Grid, TextField, Typography } from "@mui/material"
 import { ErrorOutline, GitHub } from "@mui/icons-material";
 import { isEmail } from "utils";
+import { AuthLayout } from "@/components/organisms/layouts/AuthLayout";
 
-import { AuthLayout } from "@/components/organisms/layouts"
 
 type FormData = {
     email: string;
@@ -109,15 +109,14 @@ const LoginPage = () => {
                                 Ingresar
                             </Button>
                         </Grid>
-                        <Grid item xs={12} sx={{ mt: '1.5rem', mb: "1rem" }} display={'flex'} justifyContent={'flex-end'}>
+                        {/* <Grid item xs={12} sx={{ mt: '1.5rem', mb: "1rem" }} display={'flex'} justifyContent={'flex-end'}>
                             <Button color="primary" href={`/auth/register${destinationToGoRegister}`}>
                                 No tienes una Cuenta?
                             </Button>
                         </Grid>
                         <Grid item xs={12} display={'flex'} flexDirection={'column'} justifyContent={'flex-end'}>
                             <Divider sx={{ width: "100%", mb: 2 }} />
-            
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </Box>
             </form>

@@ -1,0 +1,1 @@
+export const generalMetaTags  = ['inmuebles', 'venta', 'Fusagasugá', 'casas', 'apartamentos', 'propiedades', 'bienes raíces']

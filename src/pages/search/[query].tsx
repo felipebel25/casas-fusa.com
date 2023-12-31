@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next'
 
-import { ShopLayout } from "@/components/organisms/layouts"
+// import { ShopLayout } from "@/components/organisms/layouts"
 import { ProductList } from "@/components/molecules/products"
 import { Box, Grid, Typography, capitalize } from "@mui/material"
 import { getAllProducts, getProductsByTerm } from 'database/dbProducts'
@@ -17,7 +17,7 @@ const SearchPage = ({ products, foundProducts, query = '' }: Props) => {
 
     return (
         <>
-            <ShopLayout title={"Teslita - Search"} pageDescription={"Encuentra los mejores productos de teslita aqui"} >
+            {/* <ShopLayout title={"Teslita - Search"} pageDescription={"Encuentra los mejores productos de teslita aqui"} >
                 <Typography variant="h1" component='h1' sx={{ mb: 1 }}>Buscar Producto</Typography>
                 {
                     foundProducts ?
@@ -37,7 +37,7 @@ const SearchPage = ({ products, foundProducts, query = '' }: Props) => {
                     />
                 </Grid>
 
-            </ShopLayout>
+            </ShopLayout> */}
         </>
     )
 }

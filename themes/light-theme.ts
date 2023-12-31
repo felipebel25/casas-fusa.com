@@ -6,10 +6,10 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1E1E1E'
+      main: '#89CFF3'
     },
     secondary: {
-      main: '#46C2CB'
+      main: '#121212'
     },
     info: {
       main: '#fff'
@@ -34,6 +34,9 @@ export const lightTheme = createTheme({
       }
     },
     MuiTypography: {
+      defaultProps: {
+        color: "secondary"
+      },
       styleOverrides: {
         h1: {
           fontSize: 30,

@@ -10,7 +10,6 @@ const productSchema = new Schema({
     rooms: { type: Number, required: true, default: 0 },
     bathrooms: { type: Number, required: true, default: 0 },
     ubication: { type: String, required: true, default: "" },
-
     slug: { type: String, required: true, unique: true },
     tags: [{ type: String }],
     type: {
@@ -22,7 +21,6 @@ const productSchema = new Schema({
         default: "casa"
     },
     highlight: { type: Boolean, default: false },
-
 }, {
     timestamps: true
 })
@@ -30,7 +28,7 @@ const productSchema = new Schema({
 //todo: crear indice de mongo
 productSchema.index({ title: 'text', tags: 'text' })
 
-const Product: Model<IProduct> = mongoose.models.Product || model('Product', productSchema);
+const Product: Model<IProduct> = mongoose.models?.Product || model('Product', productSchema);
 
 
 export default Product;

@@ -1,6 +1,8 @@
+import { Box } from "@mui/material"
 import { Slide } from "react-slideshow-image"
 import 'react-slideshow-image/dist/styles.css'
-import styles from './ProductSlideshow.module.css'
+
+import { styles } from './stylesProductSlideShow'
 interface Props {
     images: string[]
 }
@@ -13,18 +15,14 @@ export const ProductSlideShow = ({ images }: Props) => {
         >
             {images.map((image) => {
                 return (
-                    <div className={styles['each-slide']} key={image}>
-                        <div
-                            // todo: crear un responsive para esta parta si esta en desktop que use contain si no cover
-                            style={{
+                    <Box key={image}>
+                        <Box
+                            sx={{
+                                ...styles.slide,
                                 backgroundImage: `url(${image})`,
-                                backgroundSize: "cover",
-                                backgroundRepeat: "no-repeat"
                             }}
-                        >
-
-                        </div>
-                    </div>
+                        />
+                    </Box>
                 )
             })}
 

@@ -1,4 +1,4 @@
 export const SHOP_CONSTANTS = {
-    validGenders: ['men', 'women', 'kid', 'unisex'],
+    validTypes: ['casa', 'apartamento', 'lote', 'quinta', 'aparta-estudio'],
 
 }

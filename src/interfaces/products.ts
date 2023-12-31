@@ -18,4 +18,4 @@ export interface IProduct {
     updatedAt: string;
 
 }
-export type IType = 'casa' | 'apartamento' | 'lote' | 'finca' | 'aparta-estudio';
+export type IType = 'casa' | 'apartamento' | 'lote' | 'quinta' | 'aparta-estudio';

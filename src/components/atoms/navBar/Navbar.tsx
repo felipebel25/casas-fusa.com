@@ -2,14 +2,17 @@ import { useContext, useState } from "react"
 import { useRouter } from "next/router"
 import NextLink from "next/link"
 
-import { ClearOutlined, SearchOutlined } from "@mui/icons-material"
-import { AppBar, Box, Button, IconButton, Input, InputAdornment, Link, Toolbar, Typography } from "@mui/material"
+import { AccountCircleOutlined, ClearOutlined, SearchOutlined } from "@mui/icons-material"
+import { AppBar, Box, IconButton, Input, InputAdornment, Link, Toolbar, Typography } from "@mui/material"
 import { UiContext } from "@/context"
+import { CasasIcon } from "../icon/CasasIcon"
+import { Categories } from "../categories/Categories"
+
 import { styles } from "./stylesNavbar"
 
 export const Navbar = () => {
 
-    const { asPath, push } = useRouter()
+    const { push } = useRouter()
     const { toggleSideMenu } = useContext(UiContext)
 
     const [isSearch, setIsSearch] = useState(false)
@@ -22,36 +25,15 @@ export const Navbar = () => {
     return (
         <AppBar sx={styles.main}>
             <Toolbar sx={styles.container}>
+                <CasasIcon sx={styles.icon} />
                 <NextLink href='/' passHref legacyBehavior>
                     <Link display='flex' alignItems='center'>
-                        <Typography variant="h5">Casas |  </Typography>
+                        <Typography sx={{ fontFamily: "Raleway", fontWeight: "800" }} variant="h5">Casas |  </Typography>
                         <Typography sx={{ ml: 0.5 }} >Fusagasuga</Typography>
                     </Link>
                 </NextLink>
                 <Box flex={1} />
-                <Box className='fadeIn' sx={{ display: isSearch ? 'none' : { xs: 'none', sm: "block" } }}>
-                    <NextLink href='/category/men' passHref legacyBehavior>
-                        <Link>
-                            <Button sx={{ m: "0.5rem" }} color={`${asPath.includes('/men') ? 'primary' : "info"}`} >
-                                Casas
-                            </Button>
-                        </Link>
-                    </NextLink>
-                    <NextLink href='/category/women' passHref legacyBehavior>
-                        <Link>
-                            <Button sx={{ m: "0.5rem" }} color={`${asPath.includes('/women') ? 'primary' : "info"}`} >
-                                Apartamentos
-                            </Button>
-                        </Link>
-                    </NextLink>
-                    <NextLink href='/category/kid' passHref legacyBehavior>
-                        <Link>
-                            <Button sx={{ m: "0.5rem" }} color={`${asPath.includes('/kid') ? 'primary' : "info"}`} >
-                                Fincas
-                            </Button>
-                        </Link>
-                    </NextLink>
-                </Box>
+                <Categories />
                 <Box flex={1} />
                 {/* screens bigs */}
                 {isSearch ? (
@@ -83,18 +65,16 @@ export const Navbar = () => {
                         <SearchOutlined />
                     </IconButton>)
                 }
-
                 {/* screens shorts */}
-                <IconButton
-                    sx={{ display: { xs: 'flex', md: "none" } }}
+                {/* <IconButton
+                    sx={{ display: { xs: 'none', md: "none" } }}
                     onClick={toggleSideMenu}
                 >
                     <SearchOutlined />
+                </IconButton> */}
+                <IconButton onClick={toggleSideMenu}>
+                    <AccountCircleOutlined />
                 </IconButton>
-
-                <Button onClick={toggleSideMenu}  >
-                    Menu
-                </Button>
             </Toolbar>
         </AppBar>
     )

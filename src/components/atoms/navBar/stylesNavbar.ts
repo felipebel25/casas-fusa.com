@@ -1,14 +1,21 @@
 export const styles = {
     main: {
-        height: "4.5rem",
+        height: { xs: "5rem", md: "7rem" },
         backgroundColor: "white",
-        borderBottom: "2px solid white",
-        // borderColor: "secondary.main",
-        // boxShadow: "1px 2px 20px 0px #dffdff"
+        p: { xs: "0.5rem", md: "0 !important" },
+        display: "flex",
+        justifyContent: "center",
     },
     container: {
         maxWidth: "lg",
         width: "100%",
         m: "0 auto",
-    }
+        p: "0 !important",
+
+    },
+    icon: {
+        fontSize: "2rem",
+        mr: "0.5rem",
+    },
+
 }

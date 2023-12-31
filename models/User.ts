@@ -21,7 +21,7 @@ const userSchema = new Schema({
 
 //todo: crear indice de mongo
 userSchema.index({ title: 'text', tags: 'text' })
-const User: Model<IUser> = mongoose.models.User || model('User', userSchema);
+const User: Model<IUser> = mongoose.models?.User || model('User', userSchema);
 
 
 export default User;

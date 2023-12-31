@@ -12,3 +12,6 @@ export const navigateToPublicUrl = (url: string) => {
     link.rel = 'noopener noreferrer';
     link.click();
 };
+export const priceToCop = (price: number) => {
+    return price.toLocaleString("es-CO", { style: "currency", currency: "COP" })
+}
