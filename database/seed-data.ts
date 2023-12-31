@@ -80,13 +80,13 @@ export const initialData: SeedData = {
         {
             name: "Felipe Medina",
             email: "felipe@gmail.com",
-            password: bcrypt.hashSync(process.env.PASSWORD_ADMIN!),
+            password: 'Pruebas12345.',
             role: "admin"
         },
         {
             name: "Pacho Medina",
             email: "pacho@gmail.com",
-            password: bcrypt.hashSync(process.env.PASSWORD_ADMIN!),
+            password: 'Pruebas12345.',
             role: "client"
         },
     ],
