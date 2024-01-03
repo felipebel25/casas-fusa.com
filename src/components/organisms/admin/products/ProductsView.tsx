@@ -22,6 +22,20 @@ export const ProductsView = ({ product, error }: Props) => {
     const data = product ?? [] as IProduct[];
     const columns: GridColDef[] = [
         {
+            field: 'borrar',
+            headerName: "Borrar",
+            width: 40,
+            renderCell: ({ row }: GridRenderCellParams<IProduct>) => {
+                return (
+                    <DeleteOutline
+                        onClick={() => onDeleteHouse(row)}
+                        style={{ width: "2.5rem", height: "2.5rem", color: "red", cursor: "pointer" }}
+                    >
+                    </DeleteOutline>
+                )
+            }
+        },
+        {
             field: 'img',
             headerName: "Foto",
             renderCell: ({ row }: GridRenderCellParams<IProduct>) => {
@@ -58,21 +72,7 @@ export const ProductsView = ({ product, error }: Props) => {
             }
         },
         { field: 'type', headerName: "Tipo" },
-        {
-            field: 'borrar',
-            headerName: "Borrar",
-            width: 250,
-            renderCell: ({ row }: GridRenderCellParams<IProduct>) => {
-                return (
-                    <DeleteOutline
-                        onClick={() => onDeleteHouse(row)}
-                        style={{ width: "2.5rem", height: "2.5rem", color: "red", cursor: "pointer" }}
-                    >
-                    </DeleteOutline>
-                )
-            }
 
-        },
     ]
 
     const onDeleteHouse = async (slug: any) => {

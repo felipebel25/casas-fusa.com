@@ -378,7 +378,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     if (slug === 'new') {
         //crear un producto
         const tempProduct = JSON.parse(JSON.stringify(new Product()))
-        console.log(tempProduct);
 
         delete tempProduct._id;
         product = tempProduct

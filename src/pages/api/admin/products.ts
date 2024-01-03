@@ -122,17 +122,18 @@ const createProduct = async (req: NextApiRequest, res: NextApiResponse) => {
 }
 
 export const removeProduct = async (req: NextApiRequest, res: NextApiResponse<{ message: string }>) => {
-    const { slug } = req.body;
+    const { id } = req.body;
+    console.log(id);
 
     await db.connect();
 
-    const product = await Product.findOne({ slug: slug })
+    const product = await Product.findById(id)
 
     if (!product) {
         await db.disconnect();
         return res.status(400).json({ message: "No existe este product " })
     }
-    product.deleteOne();
+    product.remove()
     await db.disconnect();
 
     return res.status(200).json({ message: "Casa eliminada " })
