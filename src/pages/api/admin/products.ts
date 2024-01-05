@@ -122,18 +122,24 @@ const createProduct = async (req: NextApiRequest, res: NextApiResponse) => {
 }
 
 export const removeProduct = async (req: NextApiRequest, res: NextApiResponse<{ message: string }>) => {
-    const { id } = req.body;
-    console.log(id);
-
+    const { id, images } = req.body;
     await db.connect();
 
-    const product = await Product.findById(id)
+    const product = await Product.findById(id);
 
     if (!product) {
-        await db.disconnect();
-        return res.status(400).json({ message: "No existe este product " })
+        return res.status(400).json({ message: "No existe un producto con ese ID" })
     }
-    product.remove()
+    //TODO: eliminar fotos en cloudinary
+    await product.images.forEach(async (image) => {
+        //   borrar de cloudinary
+        if (!images.includes(image)) {
+            const [fileId, extension] = image.substring(image.lastIndexOf('/') + 1).split('.')
+            await cloudinary.uploader.destroy(fileId)
+
+        }
+    })
+    await product.deleteOne(req.body)
     await db.disconnect();
 
     return res.status(200).json({ message: "Casa eliminada " })
