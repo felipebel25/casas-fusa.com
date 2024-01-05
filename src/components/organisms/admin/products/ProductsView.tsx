@@ -83,6 +83,7 @@ export const ProductsView = ({ product, error }: Props) => {
     const rows = data!.map((product) => ({
         id: product._id,
         img: product.images[0],
+        images: product.images,
         title: product.title,
         type: product.type,
         price: product.price,
