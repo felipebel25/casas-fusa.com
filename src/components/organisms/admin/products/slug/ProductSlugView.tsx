@@ -57,7 +57,7 @@ export const ProductSlugView = ({ product }: Props) => {
           target="__blank"
           href={`tel:3134084382`}
         >
-          3227049632
+          3134084382
         </Button>
 
         <Divider sx={{ width: "100%", m: "1rem auto" }} />
