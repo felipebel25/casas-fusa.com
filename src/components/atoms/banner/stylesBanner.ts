@@ -1,12 +1,15 @@
 export const styles = {
     main: {
-        backgroundColor: "#89CFF3",
-        height: { xs: "auto", md: "12.5rem" },
+        backgroundImage: { xs: "url(/images/banner-background-mobile.png)", md: "url(/images/banner-background.png)" },
+        backgroundPosition: "bottom",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: { xs: "200%", md: "100% 100%" },
+        height: { xs: "auto", md: "22.5rem" },
         padding: { xs: "3rem 0.5rem", md: "0" },
         display: 'flex',
         textAlign: { xs: "center", md: "left" },
         alignItems: "center",
-        mt: "1.5rem"
+        mt: { xs: "5rem", md: "1.5rem" }
     },
     container: {
         width: "100%",
@@ -17,13 +20,15 @@ export const styles = {
         justifyContent: "center",
     },
     title: {
-        color: "white",
-        fontSize: { xs: "1.45rem", md: "auto" }
+        color: "#0B4665",
+        fontSize: { xs: "1.45rem", md: "auto" },
+        mb: { xs: "1rem", md: "0" }
     },
     description: {
-        color: "#414141",
+        color: "black",
         mt: "0.35rem",
         fontSize: { xs: '1.25rem', md: "1.35rem" },
         whiteSpace: 'pre-line',
+        maxWidth: { md: "75%" },
     }
 }

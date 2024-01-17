@@ -15,12 +15,12 @@ export const HomePage = () => {
             pageDescription={"Explora nuestra selección de inmuebles en venta en Fusagasugá. Encuentra tu hogar perfecto con nosotros."}
             tags={generalMetaTags}
         >
-            <ProductList isLoading={isLoading} products={products} />
             <Banner
                 title="🏡 Tu hogar en Fusagasuga o alrededores"
                 description={`Explora nuestra selección de inmuebles en venta en Fusagasugá. 
                 (Casas, Apartamentos , Fincas, Lotes y Aparta estudios)`}
             />
+            <ProductList isLoading={isLoading} products={products} />
         </ShopLayout>
     )
 }

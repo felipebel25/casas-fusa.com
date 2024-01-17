@@ -10,23 +10,24 @@ export const styles = {
     },
     imageHouse: {
         width: "95%",
-        height: { xs: "auto", md: "284px" },
+        height: { xs: "294px", md: "294px" },
         m: "1rem auto",
         mt: "0",
         mb: "0",
         borderRadius: "0.25rem"
     },
+    title: {
+        lineHeight: '1.2',
+        marginBottom: "0.3rem",
+        color: "#0b4665"
+    },
     description: {
-        maxWidth: '95%',
-        overflow: 'hidden',
-        whiteSpace: 'nowrap',
-        textOverflow: 'ellipsis',
-        display: 'inline-block',
+        height: "6rem"
     },
     textIcon: {
         display: "flex",
         alignItems: "center",
-        m: "1rem 0",
+        m: "0.5rem 0",
         fontFamily: "'Raleway'"
     },
     icon: {

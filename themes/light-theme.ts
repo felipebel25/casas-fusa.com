@@ -35,7 +35,8 @@ export const lightTheme = createTheme({
     },
     MuiTypography: {
       defaultProps: {
-        color: "secondary"
+        color: "secondary",
+        margin: "0"
       },
       styleOverrides: {
         h1: {
@@ -55,7 +56,6 @@ export const lightTheme = createTheme({
         },
         root: {
           fontFamily: 'Poppins',
-          marginBottom: "0 !important"
         }
       },
 

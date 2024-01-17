@@ -2,6 +2,7 @@ export const styles = {
     container: {
         position: { xs: "fixed", md: "inherit" },
         zIndex: 5,
+        top: { xs: "5rem", md: "0" },
         display: "flex",
         justifyContent: "center",
         width: { xs: "100%", md: "auto" },

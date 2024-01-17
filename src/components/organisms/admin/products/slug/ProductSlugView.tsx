@@ -68,7 +68,7 @@ export const ProductSlugView = ({ product }: Props) => {
         </Box>
         <Box sx={styles.textIcon}>
           <Bathtub sx={styles.icon} />
-          <Typography paragraph sx={styles.textRoom}>{product.rooms} Baños</Typography>
+          <Typography paragraph sx={styles.textRoom}>{product.bathrooms} Baños</Typography>
         </Box>
         <Divider sx={{ width: "100%", m: "1rem auto" }} />
 

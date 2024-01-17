@@ -21,7 +21,7 @@ export const styles = {
     },
     title: {
         fontSize: "2rem",
-        textAlign: { xs: "center", md: "left" },
+        textAlign: "left",
     },
     ubication: {
         fontFamily: "'Raleway'"
@@ -29,7 +29,7 @@ export const styles = {
     price: {
         fontSize: "1.7rem",
         fontWeight: 500,
-        m: { xs: "1rem 0", md: "0" }
+        m: { xs: "0.5rem 0", md: "0" }
     },
     description: {
         fontSize: "1.25rem",

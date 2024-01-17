@@ -34,7 +34,7 @@ interface Props {
     product: IProduct;
 }
 
-const ProductAdminPage: FC<Props> = ({ product = { ubication: "Fusagasuga" } }) => {
+const ProductAdminPage: FC<Props> = ({ product = { title: "", ubication: "Fusagasuga" } }) => {
     const { replace } = useRouter();
 
     const fileInputRef = useRef<HTMLInputElement>(null)
@@ -81,10 +81,13 @@ const ProductAdminPage: FC<Props> = ({ product = { ubication: "Fusagasuga" } }) 
             const { data } = await tesloApi({
                 url: "/admin/products",
                 method: product._id ? "PUT" : "POST", // si tenemos un _id, entonces actualizar , si no crear
-                data: product
+                data: {
+                    ...product,
+                    price: `${product.price}000000`
+                }
             })
             if (!product._id) {
-                replace(`/admin/products/${product.slug}`)
+                replace(`/admin/products`)
                 //TODO: recargar el navegador
             } else {
                 setIsSaving(false)
@@ -218,7 +221,7 @@ const ProductAdminPage: FC<Props> = ({ product = { ubication: "Fusagasuga" } }) 
                         {/* -------------------------------------Precio---------------------------- */}
                         <TextField
                             label="Precio"
-                            placeholder='Aca va el precio de la casa!'
+                            placeholder='Poner solo el numero de millones, 350'
                             type='number'
                             variant="outlined"
                             fullWidth
@@ -348,12 +351,12 @@ const ProductAdminPage: FC<Props> = ({ product = { ubication: "Fusagasuga" } }) 
                         </Box>
                     </Grid>
                 </Grid>
-                <Box display='flex' justifyContent='end' sx={{ mt: 3 }}>
+                <Box display='flex' justifyContent='end' sx={{ my: 3 }}>
                     <Button
                         disabled={isSaving}
                         color="secondary"
                         startIcon={<SaveOutlined sx={{ width: "1.5rem", height: "1.5rem" }} />}
-                        sx={{ fontSize: "1.3rem", color: "white", fontWeight: "700" }}
+                        sx={{ fontSize: "1.3rem", mb: "3rem", color: "white", fontWeight: "700" }}
                         type="submit"
                         fullWidth
                     >
