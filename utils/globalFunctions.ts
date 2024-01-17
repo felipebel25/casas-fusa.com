@@ -13,5 +13,5 @@ export const navigateToPublicUrl = (url: string) => {
     link.click();
 };
 export const priceToCop = (price: number) => {
-    return price.toLocaleString("es-CO", { style: "currency", currency: "COP" })
+    return price.toLocaleString("es-CO", { style: "currency", currency: "COP" }).slice(0, -3)
 }

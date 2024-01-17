@@ -1,6 +1,14 @@
 import { createSvgIcon } from "@mui/material";
 
 export const CasasIcon = createSvgIcon(
-    <svg width="34px" height="34px" viewBox="0 0 34 34" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><defs><style dangerouslySetInnerHTML={{ __html: ".cls-1{fill:none;stroke:#89CFF3;stroke-miterlimit:10;stroke-width:1.91px;}" }} /></defs><path className="cls-1" d="M1.48,23.5V20.63a6.7,6.7,0,0,1,6.69-6.7h5.74a1.92,1.92,0,0,1,1.92,1.92h0a1.92,1.92,0,0,1-1.92,1.91h1l4.19-4.19A2,2,0,0,1,20.49,13h0a2,2,0,0,1,2,2h0a2,2,0,0,1-.59,1.43l-4,4a3.84,3.84,0,0,1-2.7,1.12H11A1.91,1.91,0,0,0,9.13,23.5h0" /><rect className="cls-1" x="7.22" y="7.03" width="9.57" height="6.91" /><polygon className="cls-1" points="12 1.5 6.26 7.03 17.74 7.03 12 1.5" /><rect className="cls-1" x="11.04" y="11.07" width="1.91" height="2.87" /></svg>,
+    <svg width="70" height="75" viewBox="0 0 232 232" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M80.9999 22.2651L58.6696 0L0 59.7669H80.9999V22.2651Z" fill="#0B4665" />
+        <path d="M80.9997 34.9516L58.6693 12.6865L11.4512 59.7668H80.9997V34.9516Z" fill="#89CFF3" />
+        <path d="M57.8932 32.3506H51.5312V38.6939H57.8932V32.3506Z" fill="white" />
+        <path d="M66.1647 32.3506H59.8027V38.6939H66.1647V32.3506Z" fill="white" />
+        <path d="M57.8932 40.5977H51.5312V46.941H57.8932V40.5977Z" fill="white" />
+        <path d="M66.1637 40.5977H59.8018V46.941H66.1637V40.5977Z" fill="white" />
+        <path d="M32.1607 12.6865L32.4453 36.71L22.2982 36.7912L22.2662 12.6865L32.1607 12.6865Z" fill="#0B4665" />
+    </svg>,
     'CasasIcon',
 );

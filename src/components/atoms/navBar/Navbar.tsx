@@ -28,8 +28,7 @@ export const Navbar = () => {
                 <CasasIcon sx={styles.icon} />
                 <NextLink href='/' passHref legacyBehavior>
                     <Link display='flex' alignItems='center'>
-                        <Typography sx={{ fontFamily: "Raleway", fontWeight: "800" }} variant="h5">Casas |  </Typography>
-                        <Typography sx={{ ml: 0.5 }} >Fusagasuga</Typography>
+                        <Typography sx={{ fontFamily: "Raleway", color: "#0B4665", fontWeight: "600" }} variant="h5">Casasfusa.com</Typography>
                     </Link>
                 </NextLink>
                 <Box flex={1} />

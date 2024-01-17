@@ -1,10 +1,13 @@
 import { useMemo, useState } from "react";
-import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Link, Typography } from "@mui/material"
-import { IProduct } from "@/interfaces"
 import NextLink from "next/link";
-import { styles } from "./stylesProductCard";
+import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from "@mui/material"
+
+import { IProduct } from "@/interfaces"
 import { priceToCop } from "utils/globalFunctions";
+
 import { Bathtub, Bed } from "@mui/icons-material";
+
+import { styles } from "./stylesProductCard";
 
 interface Props {
     product: IProduct;
@@ -41,16 +44,16 @@ export const ProductCard = ({ product }: Props) => {
                         />
                         <CardContent>
                             <Box sx={{ display: isImageLoaded ? 'block' : 'none' }} className='fadeIn'>
-                                <Typography component="h6" variant="h6" fontWeight={600} >{product.title}</Typography>
+                                <Typography component="h6" variant="h6" fontWeight={600} sx={styles.title} >{product.title}</Typography>
                                 <Typography fontWeight={600}>{`${priceToCop(product.price)}`}</Typography>
-                                <Typography  sx={styles.description} >{product.description}</Typography>
+                                <Typography sx={styles.description} >{product.description.slice(0, 120)}...</Typography>
                                 <Box sx={styles.textIcon}>
                                     <Bed sx={styles.icon} />
                                     <Typography paragraph>{product.rooms} Habitaciones</Typography>
                                 </Box>
                                 <Box sx={styles.textIcon}>
                                     <Bathtub sx={styles.icon} />
-                                    <Typography paragraph>{product.rooms} Baños</Typography>
+                                    <Typography paragraph>{product.bathrooms} Baños</Typography>
                                 </Box>
                             </Box>
                         </CardContent>

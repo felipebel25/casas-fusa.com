@@ -1,6 +1,6 @@
 export const styles = {
     main: {
-        height: { xs: "5rem", md: "7rem" },
+        height: { xs: "5rem", md: "6rem" },
         backgroundColor: "white",
         p: { xs: "0.5rem", md: "0 !important" },
         display: "flex",
